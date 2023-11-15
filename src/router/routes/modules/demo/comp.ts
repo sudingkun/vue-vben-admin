@@ -345,6 +345,14 @@ const comp: AppRouteModule = {
       },
       children: [
         {
+          path: 'monaco-editor',
+          name: 'monaco-editor',
+          component: () => import('@/views/demo/editor/monaco/monaco-editor.vue'),
+          meta: {
+            title: 'monaco-editor',
+          },
+        },
+        {
           path: 'json',
           component: () => import('/@/views/demo/editor/json/index.vue'),
           name: 'JsonEditorDemo',

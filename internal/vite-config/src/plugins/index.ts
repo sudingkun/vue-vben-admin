@@ -1,6 +1,7 @@
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { type PluginOption } from 'vite';
+import monacoEditorPlugin from 'vite-plugin-monaco-editor';
 import purgeIcons from 'vite-plugin-purge-icons';
 
 import { createConfigPluginConfig } from './appConfig';
@@ -32,6 +33,9 @@ async function createPlugins({ isBuild, enableMock, compress, enableAnalyze }: O
 
   // vite-plugin-purge-icons
   vitePlugins.push(purgeIcons());
+
+  // monacoEditorPlugin
+  vitePlugins.push(monacoEditorPlugin({}));
 
   // The following plugins only work in the production environment
   if (isBuild) {
