@@ -41,23 +41,65 @@ const deptList = (() => {
   for (let index = 0; index < 3; index++) {
     result.push({
       id: `${index}`,
-      deptName: ['华东分部', '华南分部', '西北分部'][index],
+      deptName: ['DNS', '宿主机', 'Cache类'][index],
       orderNo: index + 1,
       createTime: '@datetime',
       remark: '@cword(10,20)',
       'status|1': ['0', '0', '1'],
       children: (() => {
         const children: any[] = [];
-        for (let j = 0; j < 4; j++) {
+        for (let j = 0; j < 3; j++) {
           children.push({
             id: `${index}-${j}`,
-            deptName: ['研发部', '市场部', '商务部', '财务部'][j],
+            deptName: ['Cache服务器', 'appa_ecp', 'wct_switch'][j],
             orderNo: j + 1,
             createTime: '@datetime',
             remark: '@cword(10,20)',
             'status|1': ['0', '1'],
             parentDept: `${index}`,
-            children: undefined,
+            children: [
+              {
+                id: `11`,
+                deptName: 'attack',
+                orderNo: j + 1,
+                createTime: '@datetime',
+                remark: '@cword(10,20)',
+                'status|1': ['0', '1'],
+                parentDept: `${index}-${j}`,
+                children: [
+                  {
+                    id: `111`,
+                    deptName: 'AS_hk_hgk4_wss_zu1',
+                    orderNo: j + 1,
+                    createTime: '@datetime',
+                    remark: '@cword(10,20)',
+                    'status|1': ['0', '1'],
+                    parentDept: `11`,
+                    children: undefined,
+                  },
+                  {
+                    id: `112`,
+                    deptName: 'AS_hk_hgk4_wss_zu2',
+                    orderNo: j + 1,
+                    createTime: '@datetime',
+                    remark: '@cword(10,20)',
+                    'status|1': ['0', '1'],
+                    parentDept: `11`,
+                    children: undefined,
+                  },
+                ],
+              },
+              {
+                id: `12`,
+                deptName: 'appa_squid',
+                orderNo: j + 1,
+                createTime: '@datetime',
+                remark: '@cword(10,20)',
+                'status|1': ['0', '1'],
+                parentDept: `${index}-${j}`,
+                children: undefined,
+              },
+            ],
           });
         }
         return children;

@@ -1,0 +1,10 @@
+{
+  "scheduling": {
+    "moduleName": "调度",
+    "serverManagement": "服务器管理",
+    "taskManagement": "任务管理",
+    "scriptManagement": "脚本管理",
+    "serviceManagement": "服务管理",
+    "test": "审核管理"
+  }
+}

@@ -28,6 +28,7 @@ componentMap.set('TimePicker', TimePicker);
 componentMap.set('RadioGroup', Radio.Group);
 componentMap.set('RadioButtonGroup', RadioButtonGroup);
 componentMap.set('ApiRadioGroup', ApiRadioGroup);
+componentMap.set('InputTextArea', Input.TextArea);
 
 export function add(compName: ComponentType, component: Component) {
   componentMap.set(compName, component);
