@@ -1,7 +1,7 @@
-import type { ExtractPropTypes, Ref } from 'vue';
+import type { ExtractPropTypes } from 'vue';
 import type { TreeDataItem } from 'ant-design-vue/es/tree/Tree';
 
-import { buildProps } from '/@/utils/props';
+import { buildProps } from '@/utils/props';
 
 export enum ToolbarEnum {
   SELECT_ALL,
@@ -171,7 +171,7 @@ export interface InsertNodeParams {
 }
 
 export interface TreeActionType {
-  getTreeData: () => Ref<TreeDataItem[]>;
+  getTreeData: () => TreeDataItem[];
   checkAll: (checkAll: boolean) => void;
   expandAll: (expandAll: boolean) => void;
   setExpandedKeys: (keys: KeyType[]) => void;
